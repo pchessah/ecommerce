@@ -11,7 +11,7 @@ import NotFound from "./components/NotFound";
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div>
         <Navbar />
         <Switch>
           <Route exact path="/" component={ProductList} />
@@ -19,7 +19,7 @@ class App extends Component {
           <Route path="/cart" component={Cart} />
           <Route component={NotFound} />
         </Switch>
-      </React.Fragment>
+      </div>
     );
   }
 }
