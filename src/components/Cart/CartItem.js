@@ -1,4 +1,5 @@
 import React from "react";
+import {FaTrashAlt} from "react-icons/fa"
 
 function CartItem({ item, value }) {
   const { id, title, img, price, total, count } = item;
@@ -37,8 +38,8 @@ function CartItem({ item, value }) {
 
       <div className="col-10 mx-auto col-lg-2">
        <div className="cart-icon" onClick={()=>{removeItem(id)}}>
-           <button className="fas fa-trash">
-            remove item
+           <button className="btn btn-outline-danger">
+            <FaTrashAlt/>
            </button>
        </div>
       </div>

@@ -1,5 +1,6 @@
-import React, { Component, Linking } from "react";
+import React, { Component} from "react";
 import { detailProduct, storeProducts } from "./data";
+
 
 
 const ProductContext = React.createContext();
@@ -169,24 +170,7 @@ class ProductProvider extends Component {
     });
   };
 
-  sendOnWhatsApp = () => {
-    let msg = this.state.msg
-    let mobile = this.state.mobile_no
-    if(mobile){
-      if(msg){
-        let url = 'whatsapp://send?text=' + this.state.msg + '&phone=91' + this.state.mobile_no;
-        Linking.openURL(url).then((data) => {
-          console.log('WhatsApp Opened');
-        }).catch(() => {
-          alert('Make sure Whatsapp installed on your device');
-        });
-      }else{
-        alert('Please insert message to send');
-      }
-    }else{
-      alert('Please insert mobile no');
-    }
-  }
+
 
   render() {
     return (
@@ -201,6 +185,7 @@ class ProductProvider extends Component {
           decrement: this.decrement,
           clearCart: this.clearCart,
           removeItem: this.removeItem,
+          sendOnWhatsApp: this.sendOnWhatsApp
         }}
       >
         {this.props.children}

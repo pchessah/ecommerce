@@ -42,3 +42,8 @@ text-transform: uppercase;
   font-size: 1.2rem;
   color: yellow;
 }
+
+.nav-item .nav-link{
+  color: white !important;
+  font-size: 3rem;
+}

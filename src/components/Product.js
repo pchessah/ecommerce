@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
 import PropTypes from "prop-types";
+import { FaShoppingCart } from "react-icons/fa";
 
 class Product extends Component {
   render() {
@@ -14,7 +15,7 @@ class Product extends Component {
             {(value) => (
               <div
                 className="img-container p-5"
-                onClick={() =>value.handleDetail(id)}
+                onClick={() => value.handleDetail(id)}
               >
                 <Link to="/details">
                   <img src={img} alt="productImg" className="card-img-top" />
@@ -23,16 +24,19 @@ class Product extends Component {
                   className="cart-btn"
                   disabled={inCart ? true : false}
                   onClick={() => {
-                   value.addToCart(id);
-                   value.openModal(id)
+                    value.addToCart(id);
+                    value.openModal(id);
                   }}
                 >
                   {inCart ? (
                     <p className="text-capitalize mb-0" disabled>
-                      in Cart
+                      Already in cart
                     </p>
                   ) : (
-                    <p>Not in cart</p>
+                    <div>
+                      <p>Add to cart</p>
+                      <FaShoppingCart />
+                    </div>
                   )}
                 </button>
               </div>
@@ -103,7 +107,7 @@ const ProductWrapper = styled.div`
   font-size: 1.4rem;
   border-radius: 0.5rem 0 0 0;
   transform:translate(100%, 100%);
-  transition: all 1s linear;
+  transition: all 0.8s linear;
 }
 
 .img-container:hover .cart-btn{

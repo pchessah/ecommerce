@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function CartTotals({ value }) {
-  const { cartSubTotal, cartTax, cartTotal, clearCart, sendOnWhatsApp } = value;
+  const { cartSubTotal, cartTax, cartTotal, clearCart, mobile_no } = value;
+  let url = "https://wa.me/2547016165412/?text=I'm%20inquiring%20about%20the%20apartment%20"
   return (
     <React.Fragment>
       <div className="container">
@@ -29,8 +30,11 @@ function CartTotals({ value }) {
               <span className="text-title">Total:</span>
               <strong>Ksh. {cartTotal}</strong>
             </h5>
+            <a href={{url}}>
+
+              <button>Whatsapp order</button>
+            </a>
             
-              <button onClick={()=>sendOnWhatsApp()}>Whatsapp order</button>
             
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {FaShoppingCart} from "react-icons/fa"
 
 
 class Navbar extends Component {
@@ -17,7 +18,7 @@ class Navbar extends Component {
         <ul className="navbar-nav align-items-center">
           <li className="nav-item ml-5">
             <Link to="/" className="nav-link">
-              Products
+              Games
             </Link>
           </li>
         </ul>
@@ -36,7 +37,7 @@ class Navbar extends Component {
               transition: "all 0.5s ease-in-out",
             }}
           >
-            Cart
+            <FaShoppingCart/>
           </button>
         </Link>
       </nav>

@@ -5,7 +5,7 @@ function Title({name, title}) {
     <div className="row">
       <div className="col-10 mx-auto">
         <h1>
-          {name} <strong>{title}</strong>
+          <strong> {name} {title}</strong>
         </h1>
       </div>
     </div>
