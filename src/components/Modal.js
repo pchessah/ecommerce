@@ -27,14 +27,14 @@ class Modal extends Component {
                       <h6>{title}</h6>
                       <h6 className="text-muted">price : Ksh. {price}</h6>
                       <Link to="/">
-                          <button onClick={()=>closeModal()}>
-                              <h5>Continue Shopping</h5>
-                          </button>
+                        <button onClick={() => closeModal()}>
+                          <h5>Continue Shopping</h5>
+                        </button>
                       </Link>
                       <Link to="/cart">
-                          <button onClick={()=>closeModal()}>
-                              <h5>Go to Cart</h5>
-                          </button>
+                        <button onClick={() => closeModal()}>
+                          <h5>Go to Cart</h5>
+                        </button>
                       </Link>
                     </div>
                   </div>

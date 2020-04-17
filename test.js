@@ -1,15 +1,9 @@
-function chunkArrayInGroups(arr, size) {
-  const arr2 = [];
-  function chunky(){
-    arr2.push(arr.slice(i, i + size));
-      console.log(arr.slice(i, i+size));
-  }
+function spinalCase(str) {
+  let arr = str.split(" ");
+  let b = arr.map((item) => item.toLowerCase());
+  let ans = b.join("-")
+console.log(ans);
+ 
+}
 
-  arr2.map(chunky)
-    
-   
-   
-    console.log( arr2);
-  }
-
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
+spinalCase("thisIsSpinalTap")
