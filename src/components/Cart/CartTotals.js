@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function CartTotals({ value }) {
-  const { cartSubTotal, cartTax, cartTotal, clearCart } = value;
+  const { cartSubTotal, cartTax, cartTotal, clearCart, sendOnWhatsApp } = value;
   return (
     <React.Fragment>
       <div className="container">
@@ -29,6 +29,9 @@ function CartTotals({ value }) {
               <span className="text-title">Total:</span>
               <strong>Ksh. {cartTotal}</strong>
             </h5>
+            
+              <button onClick={()=>sendOnWhatsApp()}>Whatsapp order</button>
+            
           </div>
         </div>
       </div>
