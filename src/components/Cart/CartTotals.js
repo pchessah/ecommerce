@@ -60,7 +60,7 @@ function CartTotals({ value }) {
                     type="number"
                     name="phone_no"
                     id="examplePassword"
-                    placeholder="Enter contact details"
+                    placeholder="Enter phone number"
                     required
                    
                   />
