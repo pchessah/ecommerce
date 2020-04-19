@@ -18,7 +18,7 @@ class ProductProvider extends Component {
     cartTax: 0,
     cartTotal: 0,
     mobile_no: 254704987850,
-    msg:``,
+    msg:"",
     url: ""
   };
 
@@ -171,14 +171,24 @@ class ProductProvider extends Component {
     });
   };
 
+  convertCart = (msg) => {
+    msg=this.state.msg
+    this.setState(()=>{
+      return {       
+            msg:  `Order Summary: Hi, I would like to buy the following from your site :  ${this.state.cart.toString()}.`,
+       
+      }
+    })
+  }
+
   getLinkWhatsapp = (mobile_no, msg, url) => {
+    (()=>{this.convertCart()})()
     url= this.state.url
     mobile_no = this.state.mobile_no
     msg = this.state.msg.split(" ").join("%20")
     console.log(mobile_no);
      this.setState(()=>{
        return{
-         msg:  `Order Summary: Hi, I would like to buy the following from your site :  ${this.state.cart}.`,
          url:  ('https://api.whatsapp.com/send?phone=' + mobile_no + '&text=%20' + msg)
 
        }
