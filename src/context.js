@@ -18,7 +18,8 @@ class ProductProvider extends Component {
     cartTax: 0,
     cartTotal: 0,
     mobile_no: 254706165412,
-    msg: "the price is 100"
+    msg: "the price is 100",
+    url: ""
   };
 
   componentDidMount() {
@@ -170,6 +171,21 @@ class ProductProvider extends Component {
     });
   };
 
+  getLinkWhatsapp = (mobile_no, msg, url) => {
+    url= this.state.url
+    mobile_no = this.state.mobile_no
+    msg = this.state.msg.split(" ").join("%20")
+    console.log(mobile_no);
+     this.setState(()=>{
+       return{
+         url:  ('https://api.whatsapp.com/send?phone=' + mobile_no + '&text=%20' + msg)
+
+       }
+     })
+    
+    
+  }
+
 
 
   render() {
@@ -185,7 +201,7 @@ class ProductProvider extends Component {
           decrement: this.decrement,
           clearCart: this.clearCart,
           removeItem: this.removeItem,
-          sendOnWhatsApp: this.sendOnWhatsApp
+          getLinkWhatsapp: this.getLinkWhatsapp
         }}
       >
         {this.props.children}
