@@ -17,8 +17,8 @@ class ProductProvider extends Component {
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0,
-    mobile_no: 254706165412,
-    msg: "the price is 100",
+    mobile_no: 254704987850,
+    msg: `Order Summary: Hi, I would like to buy the following from your site :  ${this.state.cart}.`,
     url: ""
   };
 
