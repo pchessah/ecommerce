@@ -1,7 +1,5 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import { detailProduct, storeProducts } from "./data";
-
-
 
 const ProductContext = React.createContext();
 //Provider
@@ -17,9 +15,9 @@ class ProductProvider extends Component {
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0,
-    mobile_no: 254704987850,
+    mobile_no: 254706165412,
     msg: "",
-    url: ""
+    url: "",
   };
 
   componentDidMount() {
@@ -104,11 +102,11 @@ class ProductProvider extends Component {
     const index = tempCart.indexOf(selectedProduct);
     const product = tempCart[index];
 
-    product.count = product.count -1
-    if (product.count === 0){
-      this.removeItem(id)
+    product.count = product.count - 1;
+    if (product.count === 0) {
+      this.removeItem(id);
     } else {
-      product.total = product.count * product.price
+      product.total = product.count * product.price;
       this.setState(
         () => {
           return { cart: [...tempCart] };
@@ -171,28 +169,26 @@ class ProductProvider extends Component {
     });
   };
 
- 
-
   getLinkWhatsapp = (mobile_no, msg, url, cartMessage, id) => {
-    url= this.state.url
-    mobile_no = this.state.mobile_no
-    cartMessage = [...this.state.cart]
-    let cartMessage1 = cartMessage.map(item => item["title"]).join()
-   let cartMessage2 = `Hi, I would like the following items from your site : ${cartMessage1}`
- 
-  
-    msg = cartMessage2.split(" ").join("%20")
-    console.log(msg);
-   
-     this.setState(()=>{
-       return{
-        url:  ('https://api.whatsapp.com/send?phone=' + mobile_no + '&text=%20' + msg)
+    url = this.state.url;
+    mobile_no = this.state.mobile_no;
+    cartMessage = [...this.state.cart];
+    let cartMessage1 = cartMessage.map((item) => item["title"]).join();
+    let cartMessage2 = `Hi, I would like the following items from your site : ${cartMessage1}`;
 
-       }
-     })
-    
-    
-  }
+    msg = cartMessage2.split(" ").join("%20");
+    console.log(msg);
+
+    this.setState(() => {
+      return {
+        url:
+          "https://api.whatsapp.com/send?phone=" +
+          mobile_no +
+          "&text=%20" +
+          msg,
+      };
+    });
+  };
 
 
 
@@ -209,7 +205,8 @@ class ProductProvider extends Component {
           decrement: this.decrement,
           clearCart: this.clearCart,
           removeItem: this.removeItem,
-          getLinkWhatsapp: this.getLinkWhatsapp
+          getLinkWhatsapp: this.getLinkWhatsapp,
+          handleCustomerInfo: this.handleCustomerInfo
         }}
       >
         {this.props.children}

@@ -47,16 +47,16 @@ class Details extends Component {
                   <p className="text-muted lead">{info}</p>
                   {/*buttons*/}
                   <Link to="/">
-                    <button>Back to products</button>
+                    <button className="btn btn-secondary btn-sm">Back to products</button>
                   </Link>
-                  <button
+                  <button className="btn btn-primary btn-sm" style={{margin: "1rem"}}
                     onClick={() => {
                       value.addToCart(id);
                       value.openModal(id);
                     }}
                     disabled={inCart ? true : false}
                   >
-                    {inCart ? "inCart" : "add to Cart"}
+                    {inCart ? "inCart" : "Add to Cart"}
                   </button>
                 </div>
               </div>

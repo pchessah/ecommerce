@@ -27,7 +27,7 @@ class Modal extends Component {
                       <h6>{title}</h6>
                       <h6 className="text-muted">price : Ksh. {price}</h6>
                       <Link to="/">
-                        <button className="btn btn-outline-primary" onClick={() => closeModal()}>
+                        <button className="btn btn-outline-primary" onClick={() => closeModal()} style={{margin: "1rem"}}>
                           <h5>Continue Shopping</h5>
                         </button>
                       </Link>

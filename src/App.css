@@ -6,8 +6,9 @@
   --mainYellow: #ffa400;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Comic+Neue&display=swap');
 body {
-  font-family: "Oswald", sans-serif !important;
+  font-family: 'Comic Neue', cursive !important;
   
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
@@ -47,3 +48,7 @@ text-transform: uppercase;
   color: white !important;
   font-size: 3rem;
 }
+nav{
+  background-color: #0f56a3;
+}
+

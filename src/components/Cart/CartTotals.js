@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
+import { Form, FormGroup, Input } from "reactstrap";
 
 function CartTotals({ value }) {
   const {
@@ -39,11 +41,40 @@ function CartTotals({ value }) {
               <span className="text-title">Total:</span>
               <strong>Ksh. {cartTotal}</strong>
             </h5>
-            <a href={url}>
-              <button onClick={() => getLinkWhatsapp(mobile_no, msg)}>
-                Whatsapp order
-              </button>
-            </a>
+            <br />
+            <hr />
+            <div>
+              <Form onSubmit ={()=> getLinkWhatsapp(mobile_no, msg)}>
+                <FormGroup>
+                  <Input
+                    type="text"
+                    name="name"
+                    id="exampleEmail"
+                    placeholder="Enter full name"
+                    required
+                    
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Input
+                    type="number"
+                    name="phone_no"
+                    id="examplePassword"
+                    placeholder="Enter contact details"
+                    required
+                   
+                  />
+                </FormGroup>
+              </Form>
+                <a href={url}>
+                  <button
+                    className="btn btn-primary btn-lg btn-block"
+                    onClick={() => getLinkWhatsapp(mobile_no, msg)}
+                  >
+                    Submit Order <FaWhatsapp />
+                  </button>
+                </a>
+            </div>
           </div>
         </div>
       </div>
