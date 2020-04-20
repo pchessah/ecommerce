@@ -169,20 +169,20 @@ class ProductProvider extends Component {
     });
   };
 
-  getLinkWhatsapp = (mobile_no, msg, url, cartMessage, id) => {
-    url = this.state.url;
-    mobile_no = this.state.mobile_no;
-    cartMessage = [...this.state.cart];
-    let cartMessage1 = cartMessage.map((item) => item["title"]).join();
-    let cartMessage2 = `Hi, I would like the following items from your site : ${cartMessage1}`;
+  getLinkWhatsapp = (mobile_no, msg, url, cartMessage) => {
+    url = this.state.url; //URL TO BE PASSED TO ANCHOR TAG
+    mobile_no = this.state.mobile_no; //MOBILE NUMBER TO BE SENT INFORMATION FROM SITE
+    cartMessage = [...this.state.cart]; //CARTPRODUCTS
+    let cartMessage1 = cartMessage.map((item) => item["title"]).join(); //GET TITLE OF PRODUCT
+    let cartMessage2 = `Hi, I would like the following items from your site : ${cartMessage1}`; //MESSAGE TO BE DISPLAYED WHEN SENDING
 
-    msg = cartMessage2.split(" ").join("%20");
-    console.log(msg);
+    msg = cartMessage2.split(" ").join("%20"); //CREATE FORMAT OF URL TO BE USED TO SEND MESSAGE ON WHATSAPP
+
 
     this.setState(() => {
       return {
         url:
-          "https://api.whatsapp.com/send?phone=" +
+          "https://api.whatsapp.com/send?phone=" + //SET URL
           mobile_no +
           "&text=%20" +
           msg,

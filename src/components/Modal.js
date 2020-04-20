@@ -8,8 +8,8 @@ class Modal extends Component {
     return (
       <ProductConsumer>
         {(value) => {
-          const { modalOpen, closeModal } = value;
-          const { img, title, price } = value.modalProduct;
+          const { modalOpen, closeModal, increment, decrement } = value;
+          const { img, title, price, count, id } = value.modalProduct;
 
           if (!modalOpen) {
             return null;
@@ -27,15 +27,39 @@ class Modal extends Component {
                       <h6>{title}</h6>
                       <h6 className="text-muted">price : Ksh. {price}</h6>
                       <Link to="/">
-                        <button className="btn btn-outline-primary" onClick={() => closeModal()} style={{margin: "1rem"}}>
+                        <button
+                          className="btn btn-outline-primary"
+                          onClick={() => closeModal()}
+                          style={{ margin: "1rem" }}
+                        >
                           <h5>Continue Shopping</h5>
                         </button>
                       </Link>
                       <Link to="/cart">
-                        <button className="btn btn-outline-success" onClick={() => closeModal()}>
+                        <button
+                          className="btn btn-outline-success"
+                          onClick={() => closeModal()}
+                        >
                           <h5>Go to Cart</h5>
                         </button>
                       </Link>
+                      <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
+                        <div className="d-flex justify-content-center">
+                          <span
+                            className="btn btn-black mx-1"
+                            onClick={() => decrement(id)}
+                          >
+                            -
+                          </span>
+                          <span className="btn btn-black mx-1">{count}</span>
+                          <span
+                            className="btn btn-black mx-1"
+                            onClick={() => increment(id)}
+                          >
+                            +
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

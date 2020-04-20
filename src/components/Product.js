@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
 import PropTypes from "prop-types";
 import { FaShoppingCart } from "react-icons/fa";
+import {MdRemoveShoppingCart} from "react-icons/md"
 
 class Product extends Component {
   render() {
@@ -30,8 +31,8 @@ class Product extends Component {
                   }}
                 >
                   {inCart ? (
-                    <p type="button" className="text-capitalize mb-0" disabled style={{fontSize: "1rem"}}>
-                      Already in cart
+                    <p type="button" className="text-capitalize mb-0" disabled style={{fontSize: "0.8rem"}}>
+                      ALready in cart <br/><MdRemoveShoppingCart/>
                     </p>
                   ) : (
                     <div>
