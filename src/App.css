@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 :root {
   --mainBlue: #2a2a72;
   --lightBLue: #009ffd;
@@ -20,7 +21,7 @@ input[type=number] {
 
 @import url('https://fonts.googleapis.com/css?family=Comic+Neue&display=swap');
 body {
-  font-family: 'Comic Neue', cursive !important;
+  font-family: 'Roboto', sans-serif !important;
   
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
