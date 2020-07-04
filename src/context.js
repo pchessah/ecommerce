@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { detailProduct, storeProducts } from "./data";
+import { toast } from 'react-toastify';
 
 const ProductContext = React.createContext();
 //Provider
@@ -79,6 +80,7 @@ class ProductProvider extends Component {
   };
 
   increment = (id) => {
+    this.notifyAdd()
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find((item) => item.id === id);
     const index = tempCart.indexOf(selectedProduct);
@@ -97,6 +99,7 @@ class ProductProvider extends Component {
   };
 
   decrement = (id) => {
+    this.notifySubtract()
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find((item) => item.id === id);
     const index = tempCart.indexOf(selectedProduct);
@@ -117,6 +120,8 @@ class ProductProvider extends Component {
       );
     }
   };
+  notifyAdd = () => toast.success("One more item added");
+  notifySubtract = () => toast.warn("One item removed");
 
   removeItem = (id) => {
     let tempProducts = [...this.state.products];
@@ -158,7 +163,7 @@ class ProductProvider extends Component {
     let subTotal = 0;
     this.state.cart.map((item) => (subTotal += item.total));
     const tempTax = subTotal * 0.16;
-    const tax = parseFloat(tempTax.toFixed(2));
+    const tax = parseFloat(tempTax.toFixed(0));
     const total = subTotal + tax;
     this.setState(() => {
       return {

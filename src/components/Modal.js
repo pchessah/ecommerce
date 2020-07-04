@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { ProductConsumer } from "../context";
 import { Link } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 class Modal extends Component {
   render() {
@@ -49,6 +52,7 @@ class Modal extends Component {
                             className="btn btn-black mx-1"
                             onClick={() => decrement(id)}
                           >
+                            <ToastContainer/>
                             -
                           </span>
                           <span className="btn btn-black mx-1">{count}</span>
@@ -56,6 +60,7 @@ class Modal extends Component {
                             className="btn btn-black mx-1"
                             onClick={() => increment(id)}
                           >
+                              <ToastContainer/>
                             +
                           </span>
                         </div>

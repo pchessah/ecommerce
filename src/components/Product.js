@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
 import PropTypes from "prop-types";
 import { FaShoppingCart } from "react-icons/fa";
-import {MdRemoveShoppingCart} from "react-icons/md"
+import { MdRemoveShoppingCart } from "react-icons/md";
 
 class Product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3">
-        <div className="card" style={{marginBottom: "1rem"}}>
+        <div className="card" style={{ marginBottom: "1rem" }}>
           <ProductConsumer>
             {(value) => (
               <div
@@ -19,10 +19,19 @@ class Product extends Component {
                 onClick={() => value.handleDetail(id)}
               >
                 <Link to="/details">
-                  <img src={img} alt="productImg" className="card-img-top" style={{height: "15rem"}}/>
+                  <img
+                    src={img}
+                    alt="productImg"
+                    className="card-img-top"
+                    style={{ height: "10rem" }}
+                  />
                 </Link>
                 <button
-                style={{width: "5rem", backgroundColor: "#3094FF"}}
+                  style={{
+                    width: "4rem",
+                    backgroundColor: "#3094FF",
+                    height: "2rem",
+                  }}
                   className="cart-btn"
                   disabled={inCart ? true : false}
                   onClick={() => {
@@ -31,13 +40,18 @@ class Product extends Component {
                   }}
                 >
                   {inCart ? (
-                    <p type="button" className="text-capitalize mb-0" disabled style={{fontSize: "0.8rem"}}>
-                      ALready in cart <br/><MdRemoveShoppingCart/>
+                    <p
+                      type="button"
+                      className="text-capitalize mb-0"
+                      disabled
+                      style={{ fontSize: "0.8rem" }}
+                    >
+                      ALready in cart <br />
+                      <MdRemoveShoppingCart />
                     </p>
                   ) : (
                     <div>
-                      +<br/>
-                      <FaShoppingCart />
+                      +<FaShoppingCart />
                     </div>
                   )}
                 </button>
@@ -45,10 +59,15 @@ class Product extends Component {
             )}
           </ProductConsumer>
 
-          <div className="card-footer d-flex justify-content-between" style={{marginBottom: "1rem"}}>
+          <div
+            className="card-footer d-flex justify-content-between"
+            style={{ marginBottom: "1rem" }}
+          >
             <p className="align-self-center mb-o">{title}</p>
             <h5 className="mb-o">
-              <strong> <span className="mr-1">Ksh. {price}</span></strong>
+              <strong>
+                <span style={{fontSize:"16px"}} className="mr-1">Ksh. {price}</span>
+              </strong>
             </h5>
           </div>
         </div>
@@ -72,7 +91,8 @@ const ProductWrapper = styled.div`
 .card{
     border-color:transparent;
     transition:all 1s linear;
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2)
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    height: 20rem
 }
 
 .card-footer{
@@ -98,13 +118,13 @@ const ProductWrapper = styled.div`
   transition: all 1s linear;
 }
 .img-container:hover .card-img-top{
-  transform:scale(1.2);
+  transform:scale(1.1);
 }
 .cart-btn{
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.2rem;
   background: #3094FF;
   border: none;
   color: white;

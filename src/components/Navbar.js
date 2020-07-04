@@ -19,8 +19,8 @@ class Navbar extends Component {
           style={{ color: "black" }}
         >
           <li className="nav-item ml-5">
-            <Link to="/" className="nav-link">
-              Game Crafters
+            <Link to="/" className="nav-link" style={{fontSize: "23px"}}>
+              GAME CRAFTERS
             </Link>
           </li>
         </ul>

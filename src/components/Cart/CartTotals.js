@@ -44,7 +44,7 @@ function CartTotals({ value }) {
             <br />
             <hr />
             <div>
-              <Form onSubmit ={()=> getLinkWhatsapp(mobile_no, msg)}>
+              <Form onSubmit={() => getLinkWhatsapp(mobile_no, msg)}>
                 <FormGroup>
                   <Input
                     type="text"
@@ -52,7 +52,6 @@ function CartTotals({ value }) {
                     id="exampleEmail"
                     placeholder="Enter full name"
                     required
-                    
                   />
                 </FormGroup>
                 <FormGroup>
@@ -62,18 +61,17 @@ function CartTotals({ value }) {
                     id="examplePassword"
                     placeholder="Enter phone number"
                     required
-                   
                   />
                 </FormGroup>
               </Form>
-                <a href={url}>
-                  <button
-                    className="btn btn-primary btn-lg btn-block"
-                    onClick={() => getLinkWhatsapp(mobile_no, msg)}
-                  >
-                    Submit Order <FaWhatsapp />
-                  </button>
-                </a>
+              <a href={url}>
+                <button
+                  className="btn btn-primary btn-lg btn-block"
+                  onClick={() => getLinkWhatsapp(mobile_no, msg)}
+                >
+                  Submit Order <FaWhatsapp />
+                </button>
+              </a>
             </div>
           </div>
         </div>
