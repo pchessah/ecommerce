@@ -4,6 +4,7 @@ var urlsToCache = [
   '/completed'
 ];
 
+self.addEventListener('fetch', function(event) {});
 // Install a service worker
 self.addEventListener('install', event => {
   // Perform install steps
@@ -15,7 +16,6 @@ self.addEventListener('install', event => {
       })
   );
 });
-self.addEventListener('fetch', function(event) {});
 
 // Cache and return requests
 self.addEventListener('fetch', event => {
