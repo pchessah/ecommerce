@@ -15,6 +15,7 @@ self.addEventListener('install', event => {
       })
   );
 });
+self.addEventListener('fetch', function(event) {});
 
 // Cache and return requests
 self.addEventListener('fetch', event => {
